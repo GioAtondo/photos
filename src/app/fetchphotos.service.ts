@@ -6,5 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FetchphotosService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+
+  }
+
+  getPhoto(){
+    return this.http.get('https://api.unsplash.com/photos/random', {
+      headers: {
+        Authorization: 'Client-ID DWRqYfZggUNTm9Zw06Oxlx4xYbfuSwc40SBxe3tce8g'
+      }
+    });
+
+  }
 }
