@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FetchphotosService } from '../fetchphotos.service';
 
 @Component({
   selector: 'app-photo-show',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./photo-show.component.css']
 })
 export class PhotoShowComponent {
-
+  constructor(private fetchphotosService: FetchphotosService){
+    this.fetchphotosService.getPhoto().subscribe(() => {}
+    );
+  }
 }
