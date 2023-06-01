@@ -8,7 +8,8 @@ import { FetchphotosService } from '../fetchphotos.service';
 })
 export class PhotoShowComponent {
   constructor(private fetchphotosService: FetchphotosService){
-    this.fetchphotosService.getPhoto().subscribe(() => {}
-    );
+    this.fetchphotosService.getPhoto().subscribe(response => {
+      console.log(response.urls.regular);
+    });
   }
 }
