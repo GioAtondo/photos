@@ -7,9 +7,19 @@ import { FetchphotosService } from '../fetchphotos.service';
   styleUrls: ['./photo-show.component.css']
 })
 export class PhotoShowComponent {
+  photoUrl: string = '';
+
   constructor(private fetchphotosService: FetchphotosService){
+    this.fetchPhoto();
+  }
+
+  onClick(){
+    this.fetchPhoto();
+  }
+
+  fetchPhoto(){
     this.fetchphotosService.getPhoto().subscribe(response => {
-      console.log(response.urls.regular);
+      this.photoUrl = response.urls.regular;
     });
   }
 }
